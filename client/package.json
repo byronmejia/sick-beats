@@ -12,14 +12,18 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-persist": "^5.9.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.79.0"
   },
   "scripts": {
     "scss:build": "node-sass src/ -o src/",
     "prescss:watch": "run-s scss:build",
     "scss:watch": "node-sass src/ -o src/ --watch --recursive",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "react:build": "react-scripts build",
+    "react:start": "react-scripts start",
+    "start": "run-p scss:watch react:start",
+    "build": "run-s scss:build react:build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
