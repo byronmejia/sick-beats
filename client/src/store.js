@@ -4,7 +4,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 
 const reducers = {};
 
-const history = createHistory()
+export const history = createHistory()
 
 const middleware = routerMiddleware(history)
 
